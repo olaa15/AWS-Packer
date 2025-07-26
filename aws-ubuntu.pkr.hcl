@@ -10,7 +10,7 @@ packer {
 source "amazon-ebs" "ubuntu" {
   ami_name      = "learn-packer-linux-aws-ubuntutest"
   instance_type = "t2.micro"
-  region        = "ap-southeast-2"
+  region        = "ap-south-1"
   source_ami_filter {
     filters = {
       name                = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
@@ -29,3 +29,4 @@ build {
   ]
 }
 
+#packer build -var-file="variables.pkrvars.hcl" .

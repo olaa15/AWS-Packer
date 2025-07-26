@@ -1,33 +1,19 @@
 variable "ami_name" {
-  type    = string
-  default = "learn-packer-linux-aws-test"
+  description = "Name of the AMI to be created"
+  type        = string
 }
 
 variable "instance_type" {
-  type    = string
-  default = "t2.micro"
+  description = "Instance type to use for building the AMI"
+  type        = string
 }
 
 variable "region" {
-  type    = string
-  default = "ap-southeast-2"
-}
-
-variable "ami_filters" {
-  type = map(string)
-  default = {
-    name                = "ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-*"
-    root-device-type    = "ebs"
-    virtualization-type = "hvm"
-  }
-}
-
-variable "ami_owners" {
-  type    = list(string)
-  default = ["099720109477"]
+  description = "AWS region to use"
+  type        = string
 }
 
 variable "ssh_username" {
-  type    = string
-  default = "ubuntu"
+  description = "SSH username for the instance"
+  type        = string
 }
